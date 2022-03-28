@@ -365,6 +365,7 @@ C:\OpenFrameworks\addons\ofxOpenCv\libs\opencv\include\opencv2\videoio\legacy;%(
     <ClCompile Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxCvHaarFinder.cpp" />
     <ClCompile Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxCvImage.cpp" />
     <ClCompile Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxCvShortImage.cpp" />
+    <ClCompile Include="src\ext\DrawType.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
@@ -674,6 +675,7 @@ C:\OpenFrameworks\addons\ofxOpenCv\libs\opencv\include\opencv2\videoio\legacy;%(
     <ClInclude Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxCvImage.h" />
     <ClInclude Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxCvShortImage.h" />
     <ClInclude Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxOpenCv.h" />
+    <ClInclude Include="src\ext\DrawType.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>
@@ -690,6 +692,7 @@ C:\OpenFrameworks\addons\ofxOpenCv\libs\opencv\include\opencv2\videoio\legacy;%(
   </ItemGroup>
   <ItemGroup>
     <None Include="addons.make" />
+    <None Include="bin\data\Element.frag" />
     <None Include="bin\data\shader.frag" />
     <None Include="bin\data\shader.vert" />
   </ItemGroup>

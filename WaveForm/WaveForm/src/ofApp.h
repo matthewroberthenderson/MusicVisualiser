@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
+#include "ext/DrawType.h"
 #include "ofShader.h"
 
 class ofApp : public ofBaseApp{
@@ -10,7 +11,8 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-
+		
+		
 		float timer;
 		ofxPanel GUI;
 		ofParameter<float> VOL;

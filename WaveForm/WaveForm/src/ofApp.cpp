@@ -1,4 +1,5 @@
 #include "ofApp.h"
+#include "ext/DrawType.h"
 
 
 //--------------------------------------------------------------
@@ -53,38 +54,29 @@ void ofApp::update(){
 
 	red = (fft[0] * 10.0f);
 
-    
-	shader.begin();
-	shader.setUniform1f
-	(
-		"u_Time", 
-		red
-	);
-
-	shader.setUniform1f
-	(
-		"u_ATime",
-		timer
-	);
-
-	shader.setUniform2f
-	(
-		"u_resolution", 
-		ofGetWidth()*1.0f, 
-		ofGetHeight()*1.0f
-	);
-	shader.end();
 
 
+	Element * A;
+	if (!&A) {
+		A = new Element();
+	}
 
+	//for memdebug
+	//auto n = &A;
+
+   DrawElementCommand(
+	
+	A->SetUpElement(shader,"u_Time", red, 0.0); 
+	A->SetUpElement(shader, "u_ATime", timer, 0.0);
+	A->SetUpElement(shader, "u_resolution", ofGetWidth()*1.0f, ofGetHeight()*1.0f);
+	)
+		
 }
 
-//--------------------------------------------------------------
+
 void ofApp::draw(){
 
-	shader.begin();
-	ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
-	shader.end();
+	DrawElementCommand(ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());)
 
 	GUI.draw();
 	

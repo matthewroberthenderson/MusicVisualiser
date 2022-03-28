@@ -58,6 +58,7 @@
     <ClCompile Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\src\ofxCvShortImage.cpp">
       <Filter>addons\ofxOpenCv\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\ext\DrawType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -1133,6 +1134,7 @@
     <ClInclude Include="..\..\..\..\OpenFrameworks\addons\ofxOpenCv\libs\opencv\include\opencv2\videoio\legacy\constants_c.h">
       <Filter>addons\ofxOpenCv\libs\opencv\include\opencv2\videoio\legacy</Filter>
     </ClInclude>
+    <ClInclude Include="src\ext\DrawType.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
@@ -1141,6 +1143,7 @@
     <None Include="addons.make" />
     <None Include="bin\data\shader.frag" />
     <None Include="bin\data\shader.vert" />
+    <None Include="bin\data\Element.frag" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="bin\data\msgothic.ttf" />

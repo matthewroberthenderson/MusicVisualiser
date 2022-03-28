@@ -44,7 +44,29 @@ float simplexValue2D(in vec2 uv) {
 
 
 
-	
+
+vec3 Chromatic_04()
+{
+
+ vec3 c;
+	float l,z=u_Time;
+
+	for(int i=0;i<3;i++) {
+		vec2 u2v,p=gl_FragCoord.xy/u_resolution;
+		u2v=p + u_Time;
+		p-=.5;
+		p.x*=u_resolution.x/u_resolution.y;
+		z+=.07;
+		l=length(simplexValue2D((gl_FragCoord.xy/u_resolution) + vec2(u_Time,0.0)));
+		u2v+=p/l*(sin(u_Time)+1.)*abs(sin(l*9.-z-z));
+		c[i]=.01/length(mod(u2v,1.)-.5);
+	}
+
+	return vec3(((c * (simplexValue2D(gl_FragCoord.xy/u_resolution * 12.0f))*12.0f)/l));
+}
+
+
+
 
 
 vec3 Chromatic_03()
@@ -122,19 +144,20 @@ void main()
 vec2 coord = gl_FragCoord.xy;
 vec2 screen = (coord / u_resolution);
 vec3 Color;
+float T =  mod(u_ATime,300.0);
 
 
-   if((u_ATime) < 100.0)
+   if((T) < 100.0)
    {
-        Color = Chromatic_01();
+        Color = Chromatic_04();
    }
 
-   else if (u_ATime > 100.0 && u_ATime < 200.0 )
+   else if (T > 100.0 && T < 200.0 )
    {
         Color = Chromatic_02();
    }
 
-   else if(u_ATime > 200.0) 
+   else if(T > 200.0) 
    {
         Color = Chromatic_03();
    }
