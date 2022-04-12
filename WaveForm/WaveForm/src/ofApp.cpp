@@ -20,8 +20,6 @@
 void ofApp::setup()
 {
 
-
-	
 	GUI.setup();
 	GUI.add(VOL.set("volume", .5, .0, 1.));
 	GUI.add(DECAY.set("Decay", .5, .0, 1.0));
@@ -60,13 +58,20 @@ void ofApp::update() {
 		if (MainFile.bSuccess)
 		{
 			string path = MainFile.getPath();
+		
 			f = path;
 			sound.load(f);
 			sound.play();
 			sound.setLoop(true);
 			FilePath = path;
-			HasSet = true;
+			
+			if (!IsValidFile(f))
+			{
+				std::cout << "warning boost is saying this is an invalid file" << std::endl;
+			}
 		}
+		
+		HasSet = true;
 
 	}
 
