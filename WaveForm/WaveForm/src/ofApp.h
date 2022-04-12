@@ -11,13 +11,17 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-		
-		
+
+		std::string  f;
+		std::string  G;
+
+		bool HasSet = false;
 		float timer;
 		ofxPanel GUI;
 		ofParameter<float> VOL;
 		ofParameter<float> DECAY;
-		ofParameter<string> MESSAGE;
+		ofParameter<string> FilePath;
+		
 		ofSoundPlayer sound;
 
 		float *fft;
