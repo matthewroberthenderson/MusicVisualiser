@@ -25,8 +25,6 @@
 void ofApp::setup()
 {
 
-
-
 	GUI.setup();
 	GUI.add(VOL.set("volume", .5, .0, 1.));
 	GUI.add(DECAY.set("Decay", .5, .0, 1.0));
@@ -97,11 +95,9 @@ void ofApp::update() {
 	}
 
 
-	std::cout << TIMEBASE->GetTime() << std::endl;
-	
-	timer += 0.1;
-	ofSoundUpdate();
+	//std::cout << TIMEBASE->GetTime() << std::endl;
 
+	ofSoundUpdate();
 	sound.setVolume(VOL);
 	soundSpectrum = ofSoundGetSpectrum(bands);
 
@@ -122,7 +118,6 @@ void ofApp::update() {
 	}
 
 	red = (fft[0] * 10.0f);
-
 
 
 	Element * A;

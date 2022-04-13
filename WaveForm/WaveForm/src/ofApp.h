@@ -15,10 +15,15 @@ class ofApp : public ofBaseApp{
 
 		std::string  f;
 		std::string  G;
+
+
+		//timer 
 		TimeBase *  TIMEBASE;
 		bool HasSetTime = false;
+
+
+		//GUI
 		bool HasSet = false;
-		float timer;
 		ofxPanel GUI;
 		ofParameter<float> VOL;
 		ofParameter<float> DECAY;
