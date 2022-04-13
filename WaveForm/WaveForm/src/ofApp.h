@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "ext/DrawType.h"
+#include "../src/Helpers/Helpers.h"
 #include "ofShader.h"
 
 class ofApp : public ofBaseApp{
@@ -14,7 +15,8 @@ class ofApp : public ofBaseApp{
 
 		std::string  f;
 		std::string  G;
-
+		TimeBase *  TIMEBASE;
+		bool HasSetTime = false;
 		bool HasSet = false;
 		float timer;
 		ofxPanel GUI;

@@ -2,6 +2,7 @@
 #include <sys/stat.h>
 #include <string>
 #include <fstream>
+
 #include "boost/filesystem.hpp"
 #include "ext/DrawType.h"
 
@@ -13,12 +14,18 @@
 	return  boost::filesystem::exists(name);
 }
 
- 
+ void PrintOut()
+ {
+
+	std::cout << "time" << std::endl;
+ }
 
 //--------------------------------------------------------------
 
 void ofApp::setup()
 {
+
+
 
 	GUI.setup();
 	GUI.add(VOL.set("volume", .5, .0, 1.));
@@ -42,6 +49,7 @@ void ofApp::setup()
 void ofApp::update() {
 
 	
+
 	if (f.compare(FilePath))
 	{
 		f = FilePath;
@@ -65,6 +73,7 @@ void ofApp::update() {
 			sound.setLoop(true);
 			FilePath = path;
 			
+			//not sure if this is needed anymore tested on linux and it was ok :3
 			if (!IsValidFile(f))
 			{
 				std::cout << "warning boost is saying this is an invalid file" << std::endl;
@@ -75,6 +84,21 @@ void ofApp::update() {
 
 	}
 
+
+
+
+	if (!HasSetTime) {
+
+		//auto s = PrintOut;
+		TIMEBASE = new TimeBase();
+
+		HasSetTime = true;
+
+	}
+
+
+	std::cout << TIMEBASE->GetTime() << std::endl;
+	
 	timer += 0.1;
 	ofSoundUpdate();
 
@@ -109,7 +133,7 @@ void ofApp::update() {
 
    DrawElementCommand(
 	A->SetUpElement(shader,"u_Time", red, 0.0); 
-	A->SetUpElement(shader, "u_ATime", timer, 0.0);
+	A->SetUpElement(shader, "u_ATime", TIMEBASE->GetTime(), 0.0);
 	A->SetUpElement(shader, "u_resolution", ofGetWidth()*1.0f, ofGetHeight()*1.0f);
 	)
 		
