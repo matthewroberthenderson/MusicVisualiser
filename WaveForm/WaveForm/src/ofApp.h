@@ -13,9 +13,12 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
 
+		void exit();
+
 		std::string  f;
 		std::string  G;
 
+		
 
 		//timer 
 		TimeBase *  TIMEBASE;

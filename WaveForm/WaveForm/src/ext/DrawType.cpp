@@ -15,6 +15,7 @@
 
 	
 
+
 	void Element::SetUpElement(ofShader &ShaderInst, std::string ParamName, float float1, float float2)
 	{
 

@@ -2,11 +2,7 @@
 #include <sys/stat.h>
 #include <string>
 #include <fstream>
-
 #include "boost/filesystem.hpp"
-#include "ext/DrawType.h"
-
-
 
 
  bool IsValidFile(const std::string& name) {
@@ -16,12 +12,10 @@
 
  void PrintOut()
  {
-
 	std::cout << "time" << std::endl;
  }
 
 //--------------------------------------------------------------
-
 void ofApp::setup()
 {
 
@@ -43,7 +37,6 @@ void ofApp::setup()
 }
 
 //--------------------------------------------------------------
-
 void ofApp::update() {
 
 	
@@ -83,13 +76,10 @@ void ofApp::update() {
 	}
 
 
-
-
 	if (!HasSetTime) {
 
 		//auto s = PrintOut;
 		TIMEBASE = new TimeBase();
-
 		HasSetTime = true;
 
 	}
@@ -119,17 +109,13 @@ void ofApp::update() {
 
 	red = (fft[0] * 10.0f);
 
-
-	Element * A;
-	if (!&A) {
-		A = new Element();
-	}
-
+	Element ElementRef;
 
    DrawElementCommand(
-	A->SetUpElement(shader,"u_Time", red, 0.0); 
-	A->SetUpElement(shader, "u_ATime", TIMEBASE->GetTime(), 0.0);
-	A->SetUpElement(shader, "u_resolution", ofGetWidth()*1.0f, ofGetHeight()*1.0f);
+	ElementRef.SetUpElement(shader,"u_Time", red, 0.0);
+	ElementRef.SetUpElement(shader, "u_ATime", TIMEBASE->GetTime(), 0.0);
+	ElementRef.SetUpElement(shader, "u_resolution", ofGetWidth()*1.0f, ofGetHeight()*1.0f);
+	
 	)
 		
 }
@@ -141,5 +127,13 @@ void ofApp::draw(){
 	
 }
 
+void ofApp::exit() {
 
+	if ((TIMEBASE) && (&TIMEBASE)) 
+	{
 
+		delete(TIMEBASE);
+	}
+
+	
+}

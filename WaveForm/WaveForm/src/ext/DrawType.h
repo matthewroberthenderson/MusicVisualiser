@@ -1,10 +1,14 @@
 #pragma once
 #include "../ofApp.h"
 #include <iostream>
+#include <map>
 #include <vector>
 
 
 #define DrawElementCommand(x)shader.begin(); x shader.end();
+
+
+
 
 	class Element : public ofBaseApp {
 
@@ -15,12 +19,8 @@
 		void SetUpElement(ofShader &ShaderInst, std::string ParamName, float float1, float float2);
 		
 
-		// -- template -- 
 
-		std::vector<float>ParamArray;
 
-		std::tuple<float> * Param  = new std::tuple<float>;
-		
 		
 		template<typename T>
 		void AddData(ofShader &ShaderInst, std::string ParamName, T data) {}
